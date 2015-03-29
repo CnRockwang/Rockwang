@@ -20,7 +20,7 @@ namespace JunglePosition
             Config.AddItem(new MenuItem("Show", "œ‘ æ"));
             Config.AddToMainMenu();
 	
-	    Game.PrintChat("Rocktest11111111111111111111111")
+	    Game.PrintChat("Rocktest11111111111111111111111");
 
            
         }
