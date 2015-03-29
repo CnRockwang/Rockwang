@@ -21,6 +21,7 @@ namespace JunglePosition
             Config.AddToMainMenu();
 	
 	    Game.PrintChat("Rocktest11111111111111111111111");
+	    Console.WriteLine("Rocktest22222222222222222222");
 
            
         }
