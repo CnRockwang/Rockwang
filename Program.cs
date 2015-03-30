@@ -58,15 +58,15 @@ namespace JunglePosition
                     isSend = true;
                     gameTime = Game.Time.ToString();
                     gameTime1 = Game.Time;
-                    gameTime1 = gameTime1 + 1;
+                    gameTime1 = gameTime1 + 2;
 
 
 
-                    Game.Say(gameTime);
+                   
                     
                 }
 
-                if (Game.Time == gameTime1)
+                if (Game.Time > gameTime1)
                 {
                     Game.Say(Game.Time.ToString());
                     isSend = false;
