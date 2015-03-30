@@ -17,6 +17,8 @@ namespace JunglePosition
 
         private static void Game_OnGameLoad(EventArgs args)
         {
+            Game.OnUpdate += Game_OnGameUpdate;
+
             _menu = new Menu("Saysomething", "say_something", true);
             _menu.AddSubMenu(new Menu("Say_Something_keybins", "saysomething"));
             _menu.SubMenu("saysomething").AddSubMenu(new Menu("Top_Miss", "topmiss"));
@@ -31,6 +33,8 @@ namespace JunglePosition
             _menu.SubMenu("saysomething").AddSubMenu(new Menu("Sup&Ad_miss", "supad"));
             _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("supad_miss", "Enable this key").SetValue(true));
             _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("clcksupad", "Sup&Ad_miss").SetValue(new KeyBind('X', KeyBindType.Press)));
+            _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("clcksupad", "Sup&Ad_miss").SetValue(new KeyBind('X', KeyBindType.Press)));
+
             _menu.AddToMainMenu();
 
             //1111
@@ -40,7 +44,7 @@ namespace JunglePosition
 
 
         }
-        private static void OnGameUpdate(EventArgs args)
+        private static void Game_OnGameUpdate(EventArgs args)
         {
             Game.Say("test_OnGameUpdate");
 
