@@ -35,6 +35,7 @@ namespace Saysomething
             _menu.SubMenu("saysomething").AddSubMenu(new Menu("Sup&Ad_miss", "supad"));
            
             _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("clcksupad", "Sup&Ad_miss(=)").SetValue(new KeyBind(187, KeyBindType.Press)));
+
             _menu.AddToMainMenu();
 
        
