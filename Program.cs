@@ -48,7 +48,7 @@ namespace JunglePosition
 
 
 
-            if (_menu.Item("clcktop").GetValue<bool>())
+            if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
             {
                 Game.Say("top miss,careful~~");
 
