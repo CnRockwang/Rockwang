@@ -60,9 +60,11 @@ namespace JunglePosition
                 }
 
                 if (gameTime != Game.Time.ToString())
+                {
                     isSend = false;
-                    
-                   
+
+                }
+  
             }
 
         
