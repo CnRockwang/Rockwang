@@ -8,7 +8,8 @@ namespace JunglePosition
 {
     class Program
     {
-        public static Menu Config;
+        public static LeagueSharp.Common.Menu _menu;
+        private static Obj_AI_Hero Player;
         static void Main(string[] args)
         {
             CustomEvents.Game.OnGameLoad += Game_OnGameLoad;
@@ -16,22 +17,30 @@ namespace JunglePosition
 
         private static void Game_OnGameLoad(EventArgs args)
         {
-            Config = new Menu("Rockwang_Saysomthing", "Saysomething", true);
-            Config.AddItem(new MenuItem("Show", "显示"));
-            Config.AddToMainMenu();
-            Game.Say("小心上路miss,小心上路miss,小心上路miss,");
+            _menu = new Menu("Saysomething", "say_something", true);
+            _menu.AddSubMenu(new Menu("Say_Something_keybins", "saysomething"));
+            _menu.SubMenu("saysomething").AddSubMenu(new Menu("Top_Miss", "topmiss"));
+            _menu.SubMenu("saysomething").SubMenu("topmiss").AddItem(new MenuItem("top_miss", "Enable this key").SetValue(true));
+            _menu.SubMenu("saysomething").SubMenu("topmiss").AddItem(new MenuItem("clcktop", "Top_miss").SetValue(new KeyBind(32, KeyBindType.Press)));
+            _menu.SubMenu("saysomething").AddSubMenu(new Menu("Mid_Miss", "midmiss"));
+            _menu.SubMenu("saysomething").SubMenu("midmiss").AddItem(new MenuItem("mid_miss", "Enable this key").SetValue(true));
+            _menu.SubMenu("saysomething").SubMenu("midmiss").AddItem(new MenuItem("clckmiss", "Mid_miss").SetValue(new KeyBind('C', KeyBindType.Press)));
+            _menu.SubMenu("saysomething").AddSubMenu(new Menu("Sup_Miss", "supmiss"));
+            _menu.SubMenu("saysomething").SubMenu("supmiss").AddItem(new MenuItem("sup_miss", "Enable this key").SetValue(true));
+            _menu.SubMenu("saysomething").SubMenu("supmiss").AddItem(new MenuItem("clcksup", "Sup_miss").SetValue(new KeyBind('V', KeyBindType.Press)));
+            _menu.SubMenu("saysomething").AddSubMenu(new Menu("Sup&Ad_miss", "supad"));
+            _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("supad_miss", "Enable this key").SetValue(true));
+            _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("clcksupad", "Sup&Ad_miss").SetValue(new KeyBind('X', KeyBindType.Press)));
+            _menu.AddToMainMenu();
+
+            //1111
+
+            Game.Say("top miss,careful~~");
             Game.PrintChat("Rocktest11111111111111111111111");
             Console.WriteLine("Rocktest22222222222222222222");
 
-           
-        }
-
-        private static void Drawing_OnDraw(EventArgs args)
-        {
-          
-
-
 
         }
-    }
+
+    }   
 }
