@@ -9,7 +9,6 @@ namespace JunglePosition
     class Program
     {
         public static LeagueSharp.Common.Menu _menu;
-        public static string gameTime = "";
         public static bool isSend = false;
         public static float gameTime1 = 0;
         private static Obj_AI_Hero Player;
@@ -58,19 +57,13 @@ namespace JunglePosition
                 {
                     Game.Say("top miss,careful~~");
                     isSend = true;
-                    gameTime = Game.Time.ToString();
-                    gameTime1 = Game.Time + 2;
+                    gameTime1 = Game.Time + 1;
 
-
-                    Game.Say(gameTime1.ToString());
-
-                   
-                    
                 }
 
                 if (Game.Time > gameTime1)
                 {
-                    Game.Say(Game.Time.ToString());
+                    
                     isSend = false;
 
                 }
@@ -81,22 +74,61 @@ namespace JunglePosition
 
             if (_menu.Item("clckmid").GetValue<KeyBind>().Active)
             {
+                if (isSend == false)
+                {
+                    Game.Say("mid miss,careful~~");
+                    isSend = true;
+                    gameTime1 = Game.Time + 1;
 
-                Game.Say("mid miss,careful~~");
+                }
+
+                if (Game.Time > gameTime1)
+                {
+
+                    isSend = false;
+
+                }
+                
 
             }
 
             if (_menu.Item("clcksup").GetValue<KeyBind>().Active)
             {
+                if (isSend == false)
+                {
+                    Game.Say("sup miss,careful~~");
+                    isSend = true;
+                    gameTime1 = Game.Time + 1;
 
-                Game.Say("sup miss,careful~~");
+                }
+
+                if (Game.Time > gameTime1)
+                {
+
+                    isSend = false;
+
+                }
+                
 
             }
 
             if (_menu.Item("clcksupad").GetValue<KeyBind>().Active)
             {
+                if (isSend == false)
+                {
+                    Game.Say("sup and ad all miss,careful~~");
+                    isSend = true;
+                    gameTime1 = Game.Time + 1;
 
-                Game.Say("sup and ad all miss,careful~~");
+                }
+
+                if (Game.Time > gameTime1)
+                {
+
+                    isSend = false;
+
+                }
+                
 
             }
           
