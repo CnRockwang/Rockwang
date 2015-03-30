@@ -35,12 +35,20 @@ namespace JunglePosition
 
             //1111
 
-            Game.Say("top miss,careful~~");
-            Game.PrintChat("Rocktest11111111111111111111111");
-            Console.WriteLine("Rocktest22222222222222222222");
+            
+           
 
 
         }
+        private static void OnGameUpdate(EventArgs args)
+        {
+            if (_menu.Item("top_miss").GetValue<bool>())
+            {
+                Game.Say("top miss,careful~~");
+
+            }
+        }
+
 
     }   
 }
