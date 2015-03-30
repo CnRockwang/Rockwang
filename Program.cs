@@ -48,7 +48,7 @@ namespace JunglePosition
         {
 
             bool isSend = false;
-            string gameTime1 = "";
+            float gameTime1 = 0;
              if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
             {
 
@@ -56,13 +56,17 @@ namespace JunglePosition
                 {
                     Game.Say("top miss,careful~~");
                     isSend = true;
-                    gameTime1 = Game.Time.ToString();
-                    gameTime = gameTime1;
+                    gameTime = Game.Time.ToString();
+                    gameTime1 = Game.Time;
+                    gameTime1 = gameTime1 + 1;
+
+
+
                     Game.Say(gameTime);
                     
                 }
 
-                if (gameTime != Game.Time.ToString())
+                if (Game.Time == gameTime1)
                 {
                     Game.Say(Game.Time.ToString());
                     isSend = false;
