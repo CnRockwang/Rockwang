@@ -9,6 +9,7 @@ namespace JunglePosition
     class Program
     {
         public static LeagueSharp.Common.Menu _menu;
+        public static string gameTime = "";
         private static Obj_AI_Hero Player;
         static void Main(string[] args)
         {
@@ -47,7 +48,7 @@ namespace JunglePosition
         {
 
             bool isSend = false;
-            string gameTime="";
+            
              if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
             {
 
