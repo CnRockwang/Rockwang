@@ -26,7 +26,7 @@ namespace JunglePosition
             _menu.SubMenu("saysomething").SubMenu("topmiss").AddItem(new MenuItem("clcktop", "Top_miss").SetValue(new KeyBind(32, KeyBindType.Press)));
             _menu.SubMenu("saysomething").AddSubMenu(new Menu("Mid_Miss", "midmiss"));
             _menu.SubMenu("saysomething").SubMenu("midmiss").AddItem(new MenuItem("mid_miss", "Enable this key").SetValue(true));
-            _menu.SubMenu("saysomething").SubMenu("midmiss").AddItem(new MenuItem("clckmiss", "Mid_miss").SetValue(new KeyBind('C', KeyBindType.Press)));
+            _menu.SubMenu("saysomething").SubMenu("midmiss").AddItem(new MenuItem("clckmid", "Mid_miss").SetValue(new KeyBind('C', KeyBindType.Press)));
             _menu.SubMenu("saysomething").AddSubMenu(new Menu("Sup_Miss", "supmiss"));
             _menu.SubMenu("saysomething").SubMenu("supmiss").AddItem(new MenuItem("sup_miss", "Enable this key").SetValue(true));
             _menu.SubMenu("saysomething").SubMenu("supmiss").AddItem(new MenuItem("clcksup", "Sup_miss").SetValue(new KeyBind('V', KeyBindType.Press)));
@@ -50,9 +50,32 @@ namespace JunglePosition
 
             if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
             {
+
                 Game.Say("top miss,careful~~");
+   
+            }
+
+            if (_menu.Item("clckmid").GetValue<KeyBind>().Active)
+            {
+
+                Game.Say("mid miss,careful~~");
 
             }
+
+            if (_menu.Item("clcksup").GetValue<KeyBind>().Active)
+            {
+
+                Game.Say("sup miss,careful~~");
+
+            }
+
+            if (_menu.Item("clcksupad").GetValue<KeyBind>().Active)
+            {
+
+                Game.Say("sup and ad all miss,careful~~");
+
+            }
+          
         }
 
 
