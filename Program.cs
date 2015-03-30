@@ -63,12 +63,7 @@ namespace JunglePosition
                    
             }
 
-            if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
-            {
-                sayDelay = Utils.TickCount;
-                Game.Say("top miss,careful~~");
-   
-            }
+        
 
             if (_menu.Item("clckmid").GetValue<KeyBind>().Active)
             {
