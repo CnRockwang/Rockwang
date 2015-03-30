@@ -37,8 +37,7 @@ namespace JunglePosition
 
             _menu.AddToMainMenu();
 
-            //1111
-
+       
             
            
 
@@ -46,7 +45,7 @@ namespace JunglePosition
         }
         private static void Game_OnGameUpdate(EventArgs args)
         {
-            Game.Say("test_OnGameUpdate");
+          
 
 
             if (_menu.Item("clcktop").GetValue<bool>())
