@@ -58,10 +58,10 @@ namespace JunglePosition
                     Game.Say("top miss,careful~~");
                     isSend = true;
                     gameTime = Game.Time.ToString();
-                    gameTime1 = Game.Time;
-                    gameTime1 = gameTime1 + 2;
+                    gameTime1 = Game.Time + 2;
 
 
+                    Game.Say(gameTime1.ToString());
 
                    
                     
