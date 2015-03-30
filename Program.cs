@@ -57,11 +57,13 @@ namespace JunglePosition
                     Game.Say("top miss,careful~~");
                     isSend = true;
                     gameTime = Game.Time.ToString();
+                    Game.Say(gameTime);
                     
                 }
 
                 if (gameTime != Game.Time.ToString())
                 {
+                    Game.Say(Game.Time.ToString());
                     isSend = false;
 
                 }
