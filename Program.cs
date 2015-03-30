@@ -4,7 +4,7 @@ using LeagueSharp.Common;
 using SharpDX;
 using Color = System.Drawing.Color;
 
-namespace JunglePosition
+namespace Saysomething
 {
     class Program
     {
@@ -33,8 +33,7 @@ namespace JunglePosition
             
             _menu.SubMenu("saysomething").SubMenu("supmiss").AddItem(new MenuItem("clcksup", "Sup_miss(-)").SetValue(new KeyBind(189, KeyBindType.Press)));
             _menu.SubMenu("saysomething").AddSubMenu(new Menu("Sup&Ad_miss", "supad"));
-            _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("supad_miss", "Enable this key").SetValue(true));
-            
+           
             _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("clcksupad", "Sup&Ad_miss(=)").SetValue(new KeyBind(187, KeyBindType.Press)));
             _menu.AddToMainMenu();
 
