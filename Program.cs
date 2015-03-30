@@ -2,7 +2,6 @@ using System;
 using LeagueSharp;
 using LeagueSharp.Common;
 using SharpDX;
-using System.Threading;
 using Color = System.Drawing.Color;
 
 namespace JunglePosition
@@ -48,6 +47,7 @@ namespace JunglePosition
         {
 
             bool isSend = false;
+            string gameTime="";
              if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
             {
 
@@ -55,9 +55,11 @@ namespace JunglePosition
                 {
                     Game.Say("top miss,careful~~");
                     isSend = true;
+                    gameTime = Game.Time.ToString();
                     
                 }
-                    Thread.Sleep(500);
+
+                if (gameTime != Game.Time.ToString())
                     isSend = false;
                     
                    
