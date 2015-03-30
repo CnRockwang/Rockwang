@@ -42,7 +42,9 @@ namespace JunglePosition
         }
         private static void OnGameUpdate(EventArgs args)
         {
-            if (_menu.Item("top_miss").GetValue<bool>())
+
+
+            if (_menu.Item("clcktop").GetValue<bool>())
             {
                 Game.Say("top miss,careful~~");
 
