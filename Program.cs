@@ -42,6 +42,7 @@ namespace JunglePosition
         }
         private static void OnGameUpdate(EventArgs args)
         {
+            Game.Say("test_OnGameUpdate");
 
 
             if (_menu.Item("clcktop").GetValue<bool>())
