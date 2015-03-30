@@ -2,6 +2,7 @@ using System;
 using LeagueSharp;
 using LeagueSharp.Common;
 using SharpDX;
+using System.Threading;
 using Color = System.Drawing.Color;
 
 namespace JunglePosition
@@ -34,7 +35,7 @@ namespace JunglePosition
             _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("supad_miss", "Enable this key").SetValue(true));
             _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("clcksupad", "Sup&Ad_miss").SetValue(new KeyBind('X', KeyBindType.Press)));
             _menu.SubMenu("saysomething").SubMenu("supad").AddItem(new MenuItem("clcksupad", "Sup&Ad_miss").SetValue(new KeyBind('X', KeyBindType.Press)));
-
+            _menu.AddItem(new MenuItem("sayDelay", "say Delay").SetValue(new Slider(200, 20, 2000)));
             _menu.AddToMainMenu();
 
        
@@ -46,11 +47,25 @@ namespace JunglePosition
         private static void Game_OnGameUpdate(EventArgs args)
         {
 
+            bool isSend = false;
+             if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
+            {
 
+                if(isSend == false)
+                {
+                    Game.Say("top miss,careful~~");
+                    isSend = true;
+                    
+                }
+                    Thread.Sleep(500);
+                    isSend = false;
+                    
+                   
+            }
 
             if (_menu.Item("clcktop").GetValue<KeyBind>().Active)
             {
-
+                sayDelay = Utils.TickCount;
                 Game.Say("top miss,careful~~");
    
             }
@@ -81,3 +96,5 @@ namespace JunglePosition
 
     }   
 }
+
+           
